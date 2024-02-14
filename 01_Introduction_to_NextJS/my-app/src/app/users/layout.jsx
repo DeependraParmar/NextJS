@@ -1,0 +1,17 @@
+import React from 'react'
+import Users from './users'
+
+const layout = async({children}) => {
+  return (
+    <>
+      <section className="flex">
+        <aside className="w-1/4">
+            <Users />
+        </aside>
+        <main>{children}</main>
+      </section>
+    </>
+  )
+}
+
+export default layout
