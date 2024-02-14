@@ -22,7 +22,7 @@ const handler = async(req,res) => {
 
     if(req.method === "POST"){
         try{
-            console.log(data);
+            const data = req.body;
             const {newUser, error} = await createUser(data);
 
             if(error) throw new Error(error);
