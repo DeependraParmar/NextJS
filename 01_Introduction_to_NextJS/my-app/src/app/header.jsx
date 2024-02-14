@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 
 const header = () => {
     return (
@@ -10,7 +9,7 @@ const header = () => {
                             <Link href="/" className="text-sm font-medium uppercase">Home</Link>
                         </li>
                         <li>
-                        <Link href="users" className="text-sm font-medium uppercase">Users</Link>
+                        <Link href="/users" className="text-sm font-medium uppercase">Users</Link>
                         </li>
                     </ul>
                 </nav>
