@@ -6,7 +6,7 @@ const users = async() => {
     const {users} = await getUsers();
 
   return (
-    <section className = "fixed h-full w-1/4 bg-black">
+    <section className = "fixed z-10 h-full w-1/4 bg-black">
         <div className="center p-4">
             <h1 className="text-white mb-8 text-2xl">Users</h1>
             <ul>
