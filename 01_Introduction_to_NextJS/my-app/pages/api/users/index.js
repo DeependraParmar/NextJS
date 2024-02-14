@@ -1,4 +1,4 @@
-import { createUser, getUsers } from "@/app/lib/prisma/prisma";
+import { createUser, getUsers } from "@/lib/prisma/users";
 
 const handler = async(req,res) => {
     if(req.method === "GET"){
@@ -6,6 +6,7 @@ const handler = async(req,res) => {
             const {users, error} = await getUsers();
 
             if(error) throw new Error(error);
+
             return res.status(200).json({
                 success: true,
                 users
@@ -22,14 +23,15 @@ const handler = async(req,res) => {
     if(req.method === "POST"){
         try{
             const data = req.body;
-            const {user, error} = await createUser(data);
+            console.log(data);
+            const {newUser, error} = await createUser(data);
 
             if(error) throw new Error(error);
 
             return res.status(200).json({
                 success: true,
                 message: "User Created Successfully...",
-                user,
+                user: newUser,
             });
         }
         catch(error){
