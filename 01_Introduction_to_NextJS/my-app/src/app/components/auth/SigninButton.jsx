@@ -7,6 +7,7 @@ import {FaUserCircle} from "react-icons/fa";
 const SigninButton = () => {
   const {data: session} = useSession();
 
+  
   if(session){
     return (
         <SessionProvider session={session}>
