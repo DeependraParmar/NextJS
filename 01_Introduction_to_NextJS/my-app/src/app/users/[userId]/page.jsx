@@ -1,10 +1,19 @@
-import { getUserById } from '@/lib/prisma/users'
+import { getUserById, getUsers } from '@/lib/prisma/users'
 import React from 'react'
-import User from './user'
+import User from './user';
 
-const page = async({params}) => {
-    const {user} = await getUserById(params.userId); 
+export async function generateStaticParams(){
+    const {users} = await getUsers();
+
+    return users.map(user => ({
+        userId: user.id,
+    }))
+}
+
+const Page = async({params}) => {
+    const {user} = await getUserById(params.userId);
+
   return <User user={user} />
 }
 
-export default page
+export default Page;

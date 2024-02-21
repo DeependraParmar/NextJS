@@ -1,17 +1,15 @@
 import React from 'react'
 import Users from './users'
 
-const layout = async({children}) => {
+const UsersLayout = async({children}) => {
   return (
-    <>
-      <section className="flex">
+    <section className="flex">
         <aside className="w-1/4">
             <Users />
         </aside>
         <main>{children}</main>
-      </section>
-    </>
+    </section>
   )
 }
 
-export default layout
+export default UsersLayout
